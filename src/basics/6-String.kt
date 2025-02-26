@@ -12,6 +12,7 @@ package basics
 fun main() {
 
     /**
+     *      Yaklasik olarak her karakter basina 2 byte yer kaplari. UTF-16 encoding kullanir.
      *      Cift tirnak icerisine yazilan karakterler butunudur.
      *      Bir String ifadenin tum karakterlerini tek tek alip Char bir listeye atabilirsiniz.
      *      Ya da ekrana yazdirabilirsiniz.
@@ -29,8 +30,16 @@ fun main() {
     }
 
     val awesomeKeKod = "KeKod is Awesome"
-    val firstCharOfAwesomeKeKod = awesomeKeKod[awesomeKeKod.indices.first]
-    val lastCharOfAwesomeKeKod = awesomeKeKod[awesomeKeKod.indices.last]
+    val firstCharOfAwesomeKeKod = awesomeKeKod[awesomeKeKod.indices.first] //Ilk harf anlamina gelir.
+    val firstCharOfAwesomeKeKod2 = awesomeKeKod[3] // Ucuncu elemani al demek 0 dan balsar unutma!!!!    = o verdi yani 4. elemani
+    val lastCharOfAwesomeKeKod = awesomeKeKod[awesomeKeKod.indices.last] //Son harf anlamina gelir.
+    val lastCharOfAwesomeKeKod2 = awesomeKeKod[15] //On besinci elemani al demek 0 dan balsar unutma!!!! = e verdi yani son elemani
+
+    println("First: $firstCharOfAwesomeKeKod") //First: K yazdirdi
+    println("Last: $lastCharOfAwesomeKeKod")   //Last: e yazdirdi
+    println(firstCharOfAwesomeKeKod2)
+    println(lastCharOfAwesomeKeKod2)
+
 
 /* -------------------------------------------------------------------------------------------------------------------*/
 
@@ -38,7 +47,7 @@ fun main() {
      *      Farkli tipteki bir degiskenin onune String bir degisken ya da ifade koyarak toplarsaniz, sonuc String olacaktir.
      *      Ancak String bir degisken ya da ifadenin sonuna, + operatoru ile, farkli tipte bir degisken eklerseniz, kod calismaz.
      * **/
-    val numbersValue: String = "value" + (4 + 2 + 8)
+    val numbersValue: String = "value" + (4 + 2 + 8) // value14 verir ve tipi string olur
 //    val numbersValue2: String = (4 + 2 + 8) + "value" // Calismaz. Comment'i kaldir kontrol et istersen keko
 
     println("numbersValue" + numbersValue)
@@ -83,4 +92,25 @@ fun main() {
 
     println(rawPineTree)
     println(rawPineTree2)
+
+//      %s: String icin
+//      %d: Int tam sayilar icin
+//      %f: Noktali sayi (Float,Double) icin
+//      %n: Yeni bir satira gecmek icin
+
+    val yas = 20
+    val yasInfo = String.format("Yasim %d",yas)
+    println(yasInfo) // Yasim 20 yazdirdi
+
+    val boy = 1.90
+    val boyInfo = String.format("Boyum %.2f metre",boy)
+    println(boyInfo)   // Boyum 1,90 metre yazdirir. 2 ondalik basamakta
+
+    val ad = "Mami"
+    val kisiBilgisi = String.format("Adim: %s, Yasim: %d, Boyum: %.2f",ad,yas,boy)
+    println(kisiBilgisi) // Adim: Mami, Yasim: 20, Boyum: 1,90 yazdirdi.
+
+
+
+
 }

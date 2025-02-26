@@ -53,5 +53,8 @@ fun main() {
     // nullable kontrolunu boyle yapiyorsaniz halen keko bir yazilimcisinizdir.
     if (number1 != null && number2 != null) {
         result = number1 + number2
+
     }
+
+
 }

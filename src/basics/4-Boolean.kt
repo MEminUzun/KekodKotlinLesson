@@ -69,11 +69,9 @@ fun main() {
 
     }
 
-//    if (!isStudent) {
-//
-//    }
-
-    if (isStudent.not()) {
+    if (!isStudent) {         //DOGRU OLAN
 
     }
+
+
 }

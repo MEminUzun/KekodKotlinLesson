@@ -17,8 +17,8 @@ fun main() {
      * **/
 
     val firstCharOfName: Char = 'G'
-//    val firstCharOfName2 : Char = "G"
-//    val firstCharOfName3: Char = 'Gö'
+//    val firstCharOfName2 : Char = "G" hatalı cunku cift tirnak var.
+//    val firstCharOfName3: Char = 'Gö' hatalı olur tek kelıme olması lazım
     val charNumber: Char = '6'
 //    val charNumber2: Char = '53'
 
@@ -28,7 +28,7 @@ fun main() {
      *      Number deger alan bir Char degisken Int'e cevirilirken, gercek sayisal degerini almaz.
      *      Alacagi deger ASCII tablosundaki o sayisal degerin karsiligi olacaktir.
      * **/
-    val contertedCharNumber = charNumber.toInt()
+    val contertedCharNumber = charNumber.code
     println("charNumber = " + charNumber)
     println("charNumber = " + contertedCharNumber)
 
@@ -67,7 +67,12 @@ fun main() {
     /**
      *      Unicode karakterlerini de tanimlamak icin kullanilabilir.
      * **/
-    val uniCode = '\uFF00'
 
-    println("uniCode" + uniCode)
+    val blackHeart = '\u2665' // siyah kalp
+
+
+    println("First commit with $blackHeart")
+    val ANSI_RED = "\u001B[31m"
+    val ANSI_RESET = "\u001B[0m"
+    println("First commit with $ANSI_RED$blackHeart")
 }

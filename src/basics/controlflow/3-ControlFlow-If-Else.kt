@@ -23,7 +23,7 @@ fun main() {
      * **/
 
     print("Öğrenci misin?")
-    val answer = readLine()!!
+    val answer = readln()
 
     //state kullanimi
     if (answer.contains("Evet", ignoreCase = true)) {
@@ -41,22 +41,27 @@ fun main() {
 
     println(result)
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     /**
      *      Kotlin'de if else'lerin Expression kullanimindan oturu ternary operatoru yoktur.
      *      Ternary yerine asagidaki gibi kullanim yapabilirsiniz.
      * **/
     val isStudent = false
-    val isStudent2 = if (isStudent) {"true"} else {"false"}
+    val isStudent2 = if (isStudent) {
+        "true"
+    } else {
+        "false"
+    }
 //    String name2 = isStudent ? "true" : "false" ternary operator
 
-    print("Notunuzu Giriniz : ")
-    val grade = readLine()!!.toDouble()
 
-    if (grade <= 100 && grade >= 85) {
+    print("Notunuzu Giriniz : ")
+    val grade = readln().toDouble()
+
+    if (grade <= 100 && grade >= 80) {
         println("AA")
-    } else if (grade < 85 && grade >= 70) {
+    } else if (grade < 80 && grade >= 70) {
         println("BB")
     } else if (grade < 70 && grade >= 55) {
         println("CC")
@@ -65,6 +70,7 @@ fun main() {
     } else {
         print("Sen okulu birak :)")
     }
+
 
 //    true && true = true
 //    true && false = false
@@ -76,7 +82,7 @@ fun main() {
 //    false || true = true
 //    false ||false = false
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     /**
      *      2 farkli tipteki number degiskenler karsilastirilirken equals fonksiyonu once tiplerini karsilastirdigi icin
@@ -86,11 +92,11 @@ fun main() {
 //
 //    }
 
-    if (10 == 10L.toInt()) {
-        println("true")
-    }
+//if (10 == 10L.toInt()) {   // Bu calisir.
+//    println("true")
+//}
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     /**
      *      Birden fazla sartli durumunuz varsa bunlarin her birini, asagidaki gibi, ayri ayri if seklinde yazmak
@@ -98,7 +104,7 @@ fun main() {
      *      bulunursa, diger case'ler kontrol edilmez. Ancak asagidaki durumda dogru case bulunsa bile tum case'ler
      *      kontrol edilir.
      * **/
-    if (grade <= 100) {
+    /* if (grade <= 100) {
 
     }
 
@@ -121,8 +127,9 @@ fun main() {
     if (grade >= 55) {
 
     }
+    */
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     /**
      *      Bazi durumlarda if else yazmaktansa, if case'ini yazip return ya da throw gibi kodun devam etmesini bozacak
@@ -142,6 +149,15 @@ fun main() {
     }
 
     otherMethod()
+
+
+//    if (isStudent == true){
+//        println(isStudent)                                        // Bu ikisi ayni anlama gelir usttekini yazmaya gerek yok.
+//    }
+//    if (isStudent){
+//        println(isStudent)
+//    }
+
 }
 
 private fun otherMethod() {

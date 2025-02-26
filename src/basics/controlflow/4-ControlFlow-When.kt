@@ -42,6 +42,7 @@ fun main() {
     /**
      *      when'in yanina karsilastirma ifadesi eklemeden, bunu case'lerin yanina da ekleyebilirsiniz.
      *      Bunun artisi && || and or xor gibi ifadeleri de kullanabilmenizi saglar.
+     *      Fakat kullanimi tavsiye edilmez if else kullanmaktan bi farki kalmaz.
      * **/
     when {
         countryCode.toLowerCase() == "tr" && countryCode.toLowerCase() == "az" -> println("TC Vatandası")
@@ -164,7 +165,7 @@ fun main() {
             println("Long value")
         }
         !is Long -> {
-            println("Long value")
+            println("Not Long value")
         }
     }
 
