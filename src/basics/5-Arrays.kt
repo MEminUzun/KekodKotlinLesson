@@ -49,8 +49,7 @@ fun main() {
     citiesArray += "Bolu"
     //Birden fazla eleman eklemek icin
     citiesArray += arrayOf(
-        "Kayseri",
-        "Maras"
+        "Kayseri", "Maras"
     ) // Bunu yapmak yeni bir array olusturuyor arka planda performans problemi olabilir
     println(citiesArray.joinToString()) // Istanbul, Ankara, Rize, Bolu, Kayseri, Maras yazdirdi.
 
@@ -155,8 +154,8 @@ fun main() {
         println(false)
     }
     val array3 = array1
-    val array4 =
-        array1                // burada array 3 ve array 4 ayni value yani degeri isaret ettiginden true veriyor. Referanslar ayni.
+    val array4 = array1
+        // burada array 3 ve array 4 ayni value yani degeri isaret ettiginden true veriyor. Referanslar ayni.
     if (array3 == array4) {
         println(true)
     } else {
@@ -197,9 +196,9 @@ fun main() {
     println(simpleArray.toSet())  // [a, b, c]
 
     println(simpleArray.toList()) //[a, b, c, c]
-/**
- *Map'lere de dönüştürebilirsiniz. Ancak bunun için array'in özel olarak Pari<K, V> formunda olması lazım.
- */
+    /**
+     *Map'lere de dönüştürebilirsiniz. Ancak bunun için array'in özel olarak Pari<K, V> formunda olması lazım.
+     */
 
 
 }

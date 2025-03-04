@@ -1,5 +1,7 @@
 package functions
 
+import java.util.*
+
 // Code with ❤️
 //┌────────────────────────────┐
 //│ Created by Gökhan ÖZTÜRK   │
@@ -26,29 +28,40 @@ package functions
 
 //fun name(surName : String = "Gökhan") : String = "Gökhan"
 fun main() {
-
+    // main unittir cunku geri donus degeri yok.
     // Fonksiyon cagirilirken ismi ve parametreleri kullanilir.
     // Eger bir geri donusu varsa bir degiskene atabilir.
-    takeSquare(2)
-    val squareValue = takeSquare(2)
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+    val squareValue = takeSquare(2)
+    println(squareValue)
+
+
+
+
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     //  Bir class'in fonksiyonunu cagirirken ise nokta isaretini kullaniriz.
     Math.pow(2.0, 3.0)
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     // Default degeri olan parametrelere sahip bir fonksiyon cagirilirken, default degeri olan parametrelere deger atamak
     // sart degildir. Default degeri olan bu parametreler opsiyonel parametrelerdir.
     // Default degeri olan parametrelere deger atanmadan fonksiyon cagirilacaksa bu durumda parametre sirasi degisir.
     // Ide'ye hangi parametreye deger atadiginizi soylemek icin Named Arguments'leri kullanmaniz gerekir.
+
+
     reformatMessage("Message", true, 7, "tr")
     reformatMessage(message = "Message", size = 7, lang = "tr")
     reformatMessage("Message", true, 7)
     reformatMessage("Message", size = 7)
 
-/* -------------------------------------------------------------------------------------------------------------------*/
+
+
+
+
+
+    /* -------------------------------------------------------------------------------------------------------------------*/
 
     //vararg kullanimina orgnek. key = 3'den onceki parametreler vararg parametresine denk gelir.
     getUserInfo("Gökhan", "ÖZTÜRK", "Istanbul", "Turkiye", "", "", "", key = 3)
@@ -62,13 +75,18 @@ fun main() {
     getUserInfo3(3, "Gökhan", "ÖZTÜRK", "Istanbul", "Turkiye", true, 3.14, "")
 }
 
+
+
 /* -------------------------------------------------------------------------------------------------------------------*/
 
 /**
  *    @param number degisken tanimlanir gibi tanimlanir.
  *    Fonksiyon parametresi tanimlanirken, val var gibi betimleyiciler kullanilmaz.
  * **/
-fun takeSquare(number: Int): Int {
+fun takeSquare(number: Int = 5): Int {
+
+    // fun takeSquare(number: Int = 4): Int { = seklinde de yazilabilir buna default value denir. Function overload ya da name argument.
+    // Bunlarin ortak anlami ise fonksiyon cagirildiginda ister deger ver onla islem yapsin. Deger vermezsen de kendi degeriyle yapsin.
 //    asdsads
 //    asdsad
 //    sad
@@ -90,18 +108,28 @@ fun takeSquare(number: Int): Int {
  * **/
 fun reformatMessage(message: String, isUpperCase: Boolean = false, size: Int, lang: String = "tr") {
     println("Message : " + message + "isUpperCase : " + isUpperCase + "Size : " + size + "lang : " + lang)
+
+    val locale = if (lang == "tr") {
+        Locale("tr", "TR")
+    } else {
+        Locale.ROOT
+    }
+
+    val localMessage = if (isUpperCase) {
+        message.uppercase(locale)
+    } else {
+        message.lowercase(locale)
+    }
+
+    println("Message: $localMessage")
 }
 
 // Default arguments sayesinde asagidaki fonksiyonlari yazmak zorunda kalmayiz.
 //fun reformatMessage(message: String, size: Int, lang: String = "tr") {
-//
 //}
 //fun reformatMessage(message: String, isUpperCase: Boolean = false, size: Int) {
-//
 //}
-//
 //fun reformatMessage(message: String, size: Int) {
-//
 //}
 
 /**

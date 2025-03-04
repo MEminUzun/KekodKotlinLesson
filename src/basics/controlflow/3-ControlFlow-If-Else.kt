@@ -57,9 +57,9 @@ fun main() {
 
 
     print("Notunuzu Giriniz : ")
-    val grade = readln().toDouble()
+    var grade = readlnOrNull()?.toIntOrNull() ?: 0
 
-    if (grade <= 100 && grade >= 80) {
+    if (grade != 0) if (grade <= 100 && grade >= 80) {
         println("AA")
     } else if (grade < 80 && grade >= 70) {
         println("BB")
@@ -68,8 +68,9 @@ fun main() {
     } else if (grade < 55 && grade >= 40) {
         println("DD")
     } else {
-        print("Sen okulu birak :)")
+        println("Sen okulu birak :)")
     }
+    else println("Gecersiz deger")
 
 
 //    true && true = true
@@ -103,8 +104,7 @@ fun main() {
      *      if else seklinde yazmaktan daha kotu performans almaniza yol acar. Zira if else durumlarinda dogru case
      *      bulunursa, diger case'ler kontrol edilmez. Ancak asagidaki durumda dogru case bulunsa bile tum case'ler
      *      kontrol edilir.
-     * **/
-    /* if (grade <= 100) {
+     * **//* if (grade <= 100) {
 
     }
 

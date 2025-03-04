@@ -34,9 +34,13 @@ fun main() {
     /**
      *      and, or, xor gibi onlarca infix method vardir.
      * **/
-    if (!isStudent and isMale) {
+    if (!isStudent.and(isMale)) {
         print("Öğrenci Olmayan Erkek")
     }
+    if (!isStudent and isMale) {
+        print("Öğrenci Olmayan Erkek") // yukardaki ile ayni fakat daha okunakli infix sayesinde oluyor.
+    }
+
 
     // infix kullanimi
     isStudent and isMale
@@ -44,13 +48,14 @@ fun main() {
 
     val awesomeInstance = AwesomeClass()
     // infix kullanimi
-    awesomeInstance downloadImage "www.google.com.tr"
+    awesomeInstance downloadImage "www.google.com.tr" // Infix daha kolay ve pratik bir yazim sagladi.
+    awesomeInstance.downloadImage("www.google.com.tr")  // ustteki infix kullanim noktasiz islem yaptiriyor.
 
 /* -------------------------------------------------------------------------------------------------------------------*/
 
     val number = 5
     // matematiksel operatorlerin, tip donusumlerin (type conversion), range kullanimin, infix methodlara karsi islem onceligi vardir.
-    if (number + number - 2 * (awesomeInstance specialPlus 4) == 5) {
+    if (number + number - 2 * (awesomeInstance specialPlus 4) == 5) {  // Burada parantezin ici infix operatordur.
 
     }
 
@@ -58,6 +63,9 @@ fun main() {
 
     // infix methodlarin da mantik operatorlerine gore onceligi vardir.
     if (number == 3 && number < 5 || awesomeInstance specialPlus 4 == 5) {
+
+    // 5==3 && 5<5 || 4==5
+    // false && false || false
 
     }
 }

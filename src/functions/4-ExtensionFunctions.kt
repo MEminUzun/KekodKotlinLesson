@@ -12,7 +12,7 @@ package functions
 fun main() {
 
     /**
-     *      Bu dunyayi cekilebilir seylerin basinda gelir Extension Functions :)
+     *      Bu dunyayi cekilebilir kilan seylerin basinda gelir Extension Functions :)
      *
      *      Uzerinde degisiklik yapamadigimiz (readOnly) siniflara, ya da yapmak istemedigimiz siniflara, bu siniflarin
      *      icerisinde yazmadan fonksiyon tanimlayabilmemizi saglar. Boylece o sinifa uye bir fonksiyon kazandirabiliriz.
@@ -40,9 +40,9 @@ fun main() {
     println(tcIdentityNumber)
 
     // yukaridaki kullanimlarin yerine normal bir log2 fonksiyonu yazilabilir ve asagidaki gibi kullanilabilir.
-    log2(pi)
-    log2(schoolNumber)
-    log2(tcIdentityNumber)
+    log2(pi,"Double Number:")
+    log2(schoolNumber,"Int Number:")
+    log2(tcIdentityNumber,"Long Number:")
 
 /* -------------------------------------------------------------------------------------------------------------------*/
 
@@ -65,12 +65,14 @@ fun main() {
 
     // extension fonksiyonlar sari renkte gozukurler.
     val result: Int = "3".extPlus("5")
+    println(result) // 8 verdi
     val result2: Int = "3" extPlus "5"
+    println(result2) // 8 verdi
 
     // infix fonksiyonlar extension fonksiyonlarla kullanilabilir demistik.
     // extPlus infix extension oldugu icin . (nokta) kullanimina ihtiyac duymaz.
     // log ise sadece extension fonksiyon oldugu icin . (nokta) ile cagirilir.
-    ("3" extPlus "5").log("")
+    ("3" extPlus "5").log("Number: ")  // Number: 8 verir.
 
 /* -------------------------------------------------------------------------------------------------------------------*/
 
@@ -90,8 +92,8 @@ fun main() {
 /* -------------------------------------------------------------------------------------------------------------------*/
 
 // normal fonksiyon
-fun log2(number: Number) {
-    println(number)
+fun log2(number: Number, message: String) {
+    println("$message $number")
 }
 
 /* -------------------------------------------------------------------------------------------------------------------*/
@@ -111,6 +113,7 @@ infix fun Number.log(emptyParam: String) {
  *      Infix extension fonksiyon expression formunda kullanilabilir.
  * **/
 infix fun String.extPlus(otherString: String): Int = this.toInt() + otherString.toInt()
+
 
 /* -------------------------------------------------------------------------------------------------------------------*/
 
@@ -139,7 +142,7 @@ open class Shape {
         println("")
 
         // Int.extToString() methodunu isaret eder.
-        extToString()
+        //extToString()
 
         // Shape'e ait asagidaki uye methodu isaret eder.
         this@Shape.extToString()

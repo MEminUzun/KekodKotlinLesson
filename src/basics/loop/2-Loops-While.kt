@@ -20,21 +20,21 @@ fun main() {
     var number = 0
 
     while (number < 5) {
-        print("${number++} , ")
+        print("${number++} , ")  // 0 , 1 , 2 , 3 , 4 , verir.
     }
 
     while (number < 5) {
-        print("$number , ")
+        print("$number , ") // 0 , 1 , 2 , 3 , 4 , verir.
         number++
     }
 
-    println("-----------------")
+
 
     for (value in 0..110) {
         if (value < 5) {
-            print("$value , ")
+            println("$value , ") // usttekilerle ayni kodu verir sadece for if yazim seklidir.
         } else {
-            return
+            break  // Buraya return dersek donguden degil fonksiyondan cikariz o yuzden break kullandik.
         }
     }
 }

@@ -66,7 +66,7 @@ fun main() {
      *      Higher Order Function'lari tanimlamanin 3 yolu vardir.
      */
 
-    // Bir degiskene atayarak Higher Order Function tanimlayabilirsiniz.
+    // Bir degiskene atayarak Function tanimlayabilirsiniz.
     // Bu durumda suslu parantezler yanina higher order function'in aldigi parametreler lambda okundan once aralarina virgul
     // koyularak yazilir. Higher Order Function tek parametre aliyorsa, bu parametreleri yazmak zorunda degilsinizdir.
     // Bu durumda higher order function size "it" kelimesi ile higher order function'in parametresi tipinde bir degisken verecektir.

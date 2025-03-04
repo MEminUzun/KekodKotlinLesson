@@ -19,20 +19,24 @@ fun main() {
      * **/
 
     for (value: Int in 1..10) {
-        print("$value ")
+        print("$value ")  // 1 2 3 4 5 6 7 8 9 10 u sirayla yazdirir.
     }
 
     val countryCodeArray = arrayOf("tr", "az", "en", "fr")
 
     for (value in countryCodeArray) {
-        print("$value ")
+        print("$value ")  //sirayla yazdirir
     }
 
     for (index in countryCodeArray.indices) {
-        print("\n$index . değeri : ${countryCodeArray[index]} ")
+        print("\n$index . değeri : ${countryCodeArray[index]} ")  //Degerlerde degil indexlerle de islem yapmamiz gerekebilir.
+        // 0 . değeri : tr
+        // 1 . değeri : az
+        // 2 . değeri : en
+        // 3 . değeri : fr yazdirir.
     }
 
-    for ((index, value) in countryCodeArray.withIndex()) {
+    for ((index, value) in countryCodeArray.withIndex()) {  // ustteki ile ayni islem daha rahat
         print("\n$index . değeri : $value ")
     }
 
@@ -54,14 +58,16 @@ fun main() {
 
     for (value in 1..50) {
         if (value % 2 == 1) {
-            continue
+            continue  // Normalde alta dogru devam eder ama continue oldugundan tekrar value islemini dondurur.
+                // Eger ikiye tam bolunurse asagidaki print degerine geciyor. Yani ikiyle bolumden kalan birse devam 0 ise pronte geciyor.
         }
-        print("\n$value")
+        print("\n$value")  // Yani ikiyle bolumden 0 kalanlar sifirin katlari bu sebeple 2 ve katlarini 50 ye kadar yazdirdi 2 4 6 8 .. 50
     }
 
     for (value in 1..50) {
         if (value % 2 == 1) {
-            break
+            break   //Continue nun tam tersidir. Fakat islem break oldugunda tamamen donguden cikar. Yani printe gecmez direkt alt -
+                   // -isleme gecer. Yani asagidaki for dongusune gecer. Elemani bul gerisini kontrol etme mantigiyla kullanilabilir.
         }
         print("\n$value")
     }
@@ -75,7 +81,8 @@ fun main() {
     for (value in 1..50) {
         for (value2 in 0..10) {
             if (value2 == 5) {
-                continue
+                continue    // Burada contunie dedigimizde for value 2 icin donguye girecek. Fakat biz ustundeki for value icin  donguye -
+                            //- girmesini istersek asagidaki returLable@ islemini kullanacagiz.
             }
 
             print("continue1 : $value2 | ")
@@ -87,7 +94,7 @@ fun main() {
     returnLabel@ for (value in 1..50) {
         for (value2 in 0..10) {
             if (value2 == 5) {
-                continue@returnLabel
+                continue@returnLabel  // Buradaki mantik for value 2 den degil de for value den devam et demek.
             }
 
             print("continue2 : $value2 | ")
